@@ -1,4 +1,4 @@
-import styles from "./Header.module.css";
+import styles from "./Styles.module.css";
 
 export const Header: React.FC = () => {
   return (
