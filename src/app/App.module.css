@@ -117,3 +117,24 @@
 .destaque {
   color: var(--gray-300);
 }
+
+@media (max-width: 336px) {
+  .barraDeFerramenta {
+    flex-direction: column;
+    min-height: 50px;
+    height: auto;
+  }
+
+  .barraDeFerramenta button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .progressoDeConlusao {
+    flex-direction: column;
+    min-height: 5px;
+    height: auto;
+    align-items: center;
+  }
+}
