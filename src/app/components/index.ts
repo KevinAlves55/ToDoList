@@ -1,2 +1,3 @@
 export * from "./header/Header";
-export * from "./tarefa/Tarefa";
+export * from "./tarefaCard/Tarefa";
+export * from "./tarefas/Tarefas";
