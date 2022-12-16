@@ -1,6 +1,6 @@
 import { PlusCircle } from "phosphor-react";
 
-import { Header } from "./components/index";
+import { Header, Tarefa } from "./components/index";
 
 import commonStyles from "./styles/Common.module.css";
 import styles from "./App.module.css";
@@ -22,21 +22,26 @@ export const App = () => {
       <main className={`${commonStyles.container} ${styles.mainToDoList}`}>
         <div className={styles.progressoDeConlusao}>
           <div className={styles.progressos}>
-            <strong>Tarefas criadas</strong>
+            <strong className={styles.progressoCriadas}>Tarefas criadas</strong>
             <span>0</span>
           </div>
 
           <div className={styles.progressos}>
-            <strong>Concluídas</strong>
+            <strong className={styles.progressoConcluido}>Concluídas</strong>
             <span>0</span>
           </div>
         </div>
 
         <div className={styles.conteudoTarefas}>
-          <div className={styles.semTarefas}>
+          {/* <div className={styles.semTarefas}>
             <img src="/clipboard.svg" alt="Mochila" title="Adicine uma tarefa" />
             <p><span className={styles.destaque}>Você ainda não tem tarefas cadastradas</span> <br /> Crie tarefas e organize seus itens a fazer</p>
-          </div>
+          </div> */}
+          <Tarefa />
+          <Tarefa />
+          <Tarefa />
+          <Tarefa />
+          <Tarefa />
         </div>
       </main>
     </>

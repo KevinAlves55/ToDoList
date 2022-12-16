@@ -19,6 +19,8 @@
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
   color: var(--white);
+  outline: 1px solid var(--gray-700);
+  line-height: 1.4;
 }
 
 .barraDeFerramenta button {
@@ -68,10 +70,16 @@
   gap: 0.5rem;
 }
 
-.progressos strong {
+.progressos .progressoCriadas {
   font-size: 0.875rem;
-  font-weight: bold;
+  font-weight: 700;
   color: var(--blue-100);
+}
+
+.progressos .progressoConcluido {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--purple-100);
 }
 
 .progressos span {
