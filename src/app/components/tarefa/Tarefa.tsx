@@ -3,18 +3,26 @@ import { Check } from "phosphor-react";
 
 import styles from "./Styles.module.css";
 
-export const Tarefa: React.FC = () => {
+interface ITarefaProps {
+  tarefa: string;
+  isComplete: boolean;
+}
+
+export const Tarefa: React.FC<ITarefaProps> = ({ tarefa, isComplete }) => {
   return (
     <div className={styles.conteudoTarefa}>
       <div className={styles.tarefa}>
         <label className={styles.tarefaCheck}>
-          <input type="checkbox" />
+          <input
+            type="checkbox"
+            checked={isComplete}
+          />
           <span>
             <Check size={15} />
           </span>
         </label>
 
-        <strong>Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.</strong>
+        <strong>{tarefa}</strong>
       </div>
 
       <button title="Apagar Tarefa" className={styles.apagarTarefa}>
