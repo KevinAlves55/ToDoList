@@ -23,10 +23,29 @@ export const App = () => {
     setTarefas([...tarefas, novaTarefa]);
   };
 
+  const deletarTarefa = (id: string) => {
+    const tarefaDeletada = tarefas.filter(tarefaAtual => tarefaAtual.id !== id);
+    setTarefas(tarefaDeletada);
+  };
+
+  const realizarTarefa = (id: string) => {
+    const tarefaRealizada = tarefas.map(tarefaAtual => {
+      if (tarefaAtual.id === id) {
+        return {
+          ...tarefaAtual,
+          isCompleted: !tarefaAtual.isCompleted
+        };
+      };
+      return tarefaAtual;
+    });
+
+    setTarefas(tarefaRealizada);
+  }
+
   return (
     <>
       <Header adicionarTarefa={adicionarTarefa} />
-      <Tarefas tarefas={tarefas} />
+      <Tarefas tarefas={tarefas} onDelete={deletarTarefa} onComplete={realizarTarefa} />
     </>
   )
 }

@@ -12,12 +12,14 @@ export const Header: React.FC<IHeaderProps> = ({ adicionarTarefa }) => {
   const [texto, setTexto] = useState("");
 
   const handleValueChange = (value: string) => {
-    setTexto(value)
+    setTexto(value);
   };
 
   const handleNewTask = (e: FormEvent) => {
     e.preventDefault();
     adicionarTarefa(texto);
+
+    setTexto("");
   };
 
   return (

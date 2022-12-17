@@ -6,9 +6,11 @@ import commonStyles from "../../styles/Common.module.css";
 
 interface ITarefasProps {
   tarefas: ITarefa[];
+  onDelete: (id: string) => void;
+  onComplete: (id: string) => void;
 }
 
-export const Tarefas: React.FC<ITarefasProps> = ({ tarefas }) => {
+export const Tarefas: React.FC<ITarefasProps> = ({ tarefas, onDelete, onComplete }) => {
   const tarefasCriadas = tarefas.length;
   const tarefasConcluidas = tarefas.filter(tarefaAtual => tarefaAtual.isCompleted).length;
 
@@ -27,14 +29,18 @@ export const Tarefas: React.FC<ITarefasProps> = ({ tarefas }) => {
       </header>
 
       <div className={styles.conteudoTarefas}>
-        {tarefas.map(tarefaAtual => (
-          <TarefaCard key={tarefaAtual.id} tarefa={tarefaAtual} />
-        ))}
+        {tarefas.length > 0 && (
+          tarefas.map(tarefaAtual => (
+            <TarefaCard key={tarefaAtual.id} tarefa={tarefaAtual} onDelete={onDelete} onComplete={onComplete} />
+          ))
+        )}
 
-        {/* <div className={styles.semTarefas}>
-          <img src="/clipboard.svg" alt="Mochila" title="Adicine uma tarefa" />
-          <p><span className={styles.destaque}>Você ainda não tem tarefas cadastradas</span> <br /> Crie tarefas e organize seus itens a fazer</p>
-        </div> */}
+        {tarefas.length === 0 && (
+          <div className={styles.semTarefas}>
+            <img src="/clipboard.svg" alt="Mochila" title="Adicine uma tarefa" />
+            <p><span className={styles.destaque}>Você ainda não tem tarefas cadastradas</span> <br /> Crie tarefas e organize seus itens a fazer</p>
+          </div>
+        )}
       </div>
     </main>
   );
