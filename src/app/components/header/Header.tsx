@@ -17,9 +17,10 @@ export const Header: React.FC<IHeaderProps> = ({ adicionarTarefa }) => {
 
   const handleNewTask = (e: FormEvent) => {
     e.preventDefault();
-    adicionarTarefa(texto);
 
+    if (texto.trim().length === 0) return;
     setTexto("");
+    adicionarTarefa(texto);
   };
 
   return (

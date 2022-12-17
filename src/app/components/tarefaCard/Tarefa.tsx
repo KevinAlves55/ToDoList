@@ -37,7 +37,7 @@ export const TarefaCard: React.FC<ITarefaCardProps> = ({ tarefa, onDelete, onCom
         </span>
       </label>
 
-      <strong>{tarefa.title}</strong>
+      <strong className={isCompleted === true ? styles.tarefaRealizada : ""}>{tarefa.title}</strong>
 
       <button onClick={handleDeleteTask} title="Apagar Tarefa" className={styles.apagarTarefa}>
         <Trash />

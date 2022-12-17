@@ -96,3 +96,8 @@
   background-color: var(--gray-400);
   color: var(--danger-100);
 }
+
+strong.tarefaRealizada {
+  color: var(--gray-300);
+  text-decoration: line-through;
+}
